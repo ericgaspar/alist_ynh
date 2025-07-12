@@ -2,7 +2,7 @@
   "force": true,
   "site_url": "https://__DOMAIN__",
   "cdn": "",
-  "jwt_secret": "random_generated",
+  "jwt_secret": "__KEY__",
   "token_expires_in": 48,
   "database": {
     "type": "postgres",
