@@ -6,7 +6,7 @@
   "token_expires_in": 48,
   "database": {
     "type": "postgres",
-    "host": "localhost",
+    "host": "127.0.0.1",
     "port": 5432,
     "user": "__DB_USER__",
     "password": "__DB_PWD__",
@@ -17,7 +17,7 @@
     "dsn": ""
   },
   "meilisearch": {
-    "host": "http://localhost:7700",
+    "host": "http://127.0.0.1:7700",
     "api_key": "",
     "index_prefix": ""
   },
@@ -37,7 +37,7 @@
   "dist_dir": "",
   "log": {
     "enable": true,
-    "name": "/var/log/__APP__.log",
+    "name": "/var/log/__APP__/__APP__.log",
     "max_size": 50,
     "max_backups": 30,
     "max_age": 28,
