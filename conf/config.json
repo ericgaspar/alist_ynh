@@ -112,5 +112,5 @@
     "enable": false,
     "listen": ":5222"
   },
-  "last_launched_version": "AList version"
+  "last_launched_version": "__VERSION__"
 }
