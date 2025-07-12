@@ -13,7 +13,7 @@
     "name": "__DB_NAME__",
     "db_file": "",
     "table_prefix": "x_",
-    "ssl_mode": "",
+    "ssl_mode": "disable",
     "dsn": ""
   },
   "meilisearch": {
