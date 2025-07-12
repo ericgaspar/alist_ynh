@@ -17,14 +17,12 @@ ynh_setup_source --dest_dir="$install_dir"
 
 chmod +x $install_dir/alist
 
-#./alist admin set $password
-
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
-#ynh_script_progression "Adding $app's configuration files..."
+ynh_script_progression "Adding $app's configuration files..."
 
-#ynh_config_add --template="some_config_file" --destination="$install_dir/some_config_file"
+ynh_config_add --template="config.json" --destination="$install_dir/data/config.json"
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -38,6 +36,15 @@ ynh_config_add_nginx
 ynh_config_add_systemd
 
 yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
+
+#=================================================
+# INSTALL DODOC
+#=================================================
+ynh_script_progression "Installing the app..."
+
+pushd "$install_dir"
+ 	./alist admin set $password
+popd
 
 #=================================================
 # START SYSTEMD SERVICE
