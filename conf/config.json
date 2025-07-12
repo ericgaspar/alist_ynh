@@ -32,12 +32,12 @@
     "unix_file_perm": "",
     "enable_h2c": false
   },
-  "temp_dir": "data\\temp",
-  "bleve_dir": "data\\bleve",
+  "temp_dir": "__DATA_DIR__/temp",
+  "bleve_dir": "__DATA_DIR__/bleve",
   "dist_dir": "",
   "log": {
     "enable": true,
-    "name": "data\\log\\log.log",
+    "name": "/var/logs/__APP__.log",
     "max_size": 50,
     "max_backups": 30,
     "max_age": 28,
