@@ -1,17 +1,17 @@
 {
-  "force": false,
-  "site_url": "",
+  "force": true,
+  "site_url": "https://__DOMAIN__",
   "cdn": "",
-  "jwt_secret": "r8cBlJQdzDlkqqcI",
+  "jwt_secret": "random_generated",
   "token_expires_in": 48,
   "database": {
-    "type": "sqlite3",
-    "host": "",
-    "port": 0,
-    "user": "",
-    "password": "",
-    "name": "",
-    "db_file": "data/data.db",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "user": "__DB_USER__",
+    "password": "__DB_PWD__",
+    "name": "__DB_NAME__",
+    "db_file": "",
     "table_prefix": "x_",
     "ssl_mode": "",
     "dsn": ""
@@ -32,12 +32,12 @@
     "unix_file_perm": "",
     "enable_h2c": false
   },
-  "temp_dir": "data/temp",
-  "bleve_dir": "data/bleve",
+  "temp_dir": "data\\temp",
+  "bleve_dir": "data\\bleve",
   "dist_dir": "",
   "log": {
     "enable": true,
-    "name": "data/log/log.log",
+    "name": "data\\log\\log.log",
     "max_size": 50,
     "max_backups": 30,
     "max_age": 28,
@@ -54,6 +54,25 @@
       "task_persistant": false
     },
     "transfer": {
+      "workers": 5,
+      "max_retry": 2,
+      "task_persistant": false
+    },
+    "upload": {
+      "workers": 5,
+      "max_retry": 0,
+      "task_persistant": false
+    },
+    "copy": {
+      "workers": 5,
+      "max_retry": 2,
+      "task_persistant": false
+    },
+    "decompress": {
+      "workers": 5,
+      "max_retry": 2,
+      "task_persistant": false
+    },
     "decompress_upload": {
       "workers": 5,
       "max_retry": 2,
@@ -93,5 +112,5 @@
     "enable": false,
     "listen": ":5222"
   },
-  "last_launched_version": "v3.45.1"
+  "last_launched_version": "AList version"
 }

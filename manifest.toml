@@ -5,18 +5,17 @@ packaging_format = 2
 id = "alist"
 name = "AList"
 description.en = "File list program that supports multiple storage"
-description.fr = "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
+description.fr = "Programme de liste de fichiers prenant en charge le stockage multiple"
 
 version = "3.45.1~ynh1"
 
 maintainers = ["eric_G"]
 
 [upstream]
-license = "free" # you can see the available licenses identifiers list here: https://spdx.org/licenses/
-website = "https://example.com"
-demo = "https://demo.example.com"
+license = "AGPL-3.0"
+website = "https://alistgo.com/"
 admindoc = "https://alistgo.com/guide/install/manual.html"
-code = "https://some.forge.com/example/example"
+code = "https://github.com/AlistGo/alist"
 
 [integration]
 yunohost = ">= 12.0.9"
@@ -40,8 +39,8 @@ ram.runtime = "50M"
     type = "group"
     default = "visitors"
 
-    [install.password]
-    type = "password"
+    #[install.password]
+    #type = "password"
 
 [resources]
 
@@ -63,3 +62,9 @@ ram.runtime = "50M"
 
     [resources.ports]
     main.default = 5244
+
+    [resources.apt]
+    packages = "ostgresql, postgresql-contrib"
+
+    [resources.database]
+    type = "postgresql"
