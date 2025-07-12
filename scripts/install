@@ -43,7 +43,7 @@ chown -R $app:$app /var/log/$app
 #=================================================
 # INSTALL ADMIN
 #=================================================
-#ynh_script_progression "Creat admin..."
+ynh_script_progression "Creat admin..."
 
 pushd "$install_dir"
  	./alist admin set $password
