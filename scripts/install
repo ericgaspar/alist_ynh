@@ -17,15 +17,12 @@ ynh_setup_source --dest_dir="$install_dir"
 
 chmod +x $install_dir/alist
 
-# Start a systemd service
-ynh_systemctl --service="$app" --action="start"
-
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
 
-ynh_config_add --template="config.json" --destination="$install_dir/data/config.json"
+ynh_config_add --template=".env" --destination="$install_dir/.env"
 
 #=================================================
 # INSTALL ADMIN
@@ -55,7 +52,7 @@ yunohost service add "$app" --description="A short description of the app" --log
 ynh_script_progression "Starting $app's systemd service..."
 
 # Start a systemd service
-ynh_systemctl --service="$app" --action="restart"
+ynh_systemctl --service="$app" --action="start"
 
 #=================================================
 # END OF SCRIPT
