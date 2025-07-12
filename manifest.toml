@@ -58,12 +58,11 @@ ram.runtime = "50M"
     [resources.install_dir]
 
     [resources.data_dir]
-    
+
     [resources.permissions]
     main.url = "/"
 
     [resources.ports]
-    main.default = 5244
 
     [resources.apt]
     packages = "postgresql, postgresql-contrib"
