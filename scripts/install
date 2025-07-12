@@ -20,18 +20,9 @@ chmod +x $install_dir/alist
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
-ynh_script_progression "Adding $app's configuration files..."
+#ynh_script_progression "Adding $app's configuration files..."
 
-ynh_config_add --template=".env" --destination="$install_dir/.env"
-
-#=================================================
-# INSTALL ADMIN
-#=================================================
-ynh_script_progression "Creat admin..."
-
-pushd "$install_dir"
- 	./alist admin set $password
-popd
+#ynh_config_add --template=".env" --destination="$install_dir/.env"
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -53,6 +44,15 @@ ynh_script_progression "Starting $app's systemd service..."
 
 # Start a systemd service
 ynh_systemctl --service="$app" --action="start"
+
+#=================================================
+# INSTALL ADMIN
+#=================================================
+ynh_script_progression "Creat admin..."
+
+pushd "$install_dir"
+ 	./alist admin set $password
+popd
 
 #=================================================
 # END OF SCRIPT
