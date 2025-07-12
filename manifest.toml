@@ -64,7 +64,7 @@ ram.runtime = "50M"
     main.default = 5244
 
     [resources.apt]
-    packages = "ostgresql, postgresql-contrib"
+    packages = "postgresql, postgresql-contrib"
 
     [resources.database]
     type = "postgresql"
